@@ -69,6 +69,318 @@ DIV1.style.display="none";
 DIV3.style.display="inline";
 } 
 </script> 
+</head>
+
+<body>
+
+    <div class="brand"><img class="img-responsive" style="margin:auto;" src="/style/img/logo2.png" alt=""></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html"><img style="max-width:100px" src="/style/img/logo.png" alt=""></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="cv.html">Curriculum Vitae</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#myModal">Login</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="img-responsive img-full" src="/style/img/slide-1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="/style/img/slide-2.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="/style/img/slide-3.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                    <div style="font-family:Tahoma !important;" >
+                    <h2 class="brand-before">
+                        <small style="font-family:Tahoma;">Lapini lūgti</small>
+                    </h2>
+                    <h1 class="brand-name" style="font-family:Tahoma;">neVo.lv</h1>
+                    </div>
+                    <hr class="tagline-divider">
+                    <h2>
+                        <small>
+                            <strong>Design Studio</strong>
+                        </small>
+                    </h2>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Pieslēgšanās</h4>
+      </div>
+      <div class="modal-body">
+          <div id="DIV2" style="display:block;">
+        <div class="input-group">
+  <span class="input-group-addon" aria-hidden="true">User</span>
+  <input type="text" class="form-control" placeholder="Lietotajvards" aria-describedby="sizing-addon2">
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon" aria-hidden="true">Pass</span>
+  <input type="text" class="form-control" placeholder="Parole" aria-describedby="sizing-addon2">
+</div></div>
+<div id="DIV1" style="display:none;">
+    <div class="alert alert-success" role="alert">Jūs esiet veiksmīgi ielogojies!</div>
+</div>
+      </div>
+      <div class="modal-footer">
+          <a href="#" data-toggle="modal" data-target="#myModal2" style="float:left;" data-dismiss="modal">Neesi Reģistrējies?</a>
+         <button type="button" class="btn btn-default btn-lg" onClick="ShowDIV();" id="DIV3">Ieiet</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="ResetDIV();">Aizvert</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Reģistrācija</h4>
+      </div>
+      <div class="modal-body">
+                    <form id="defaultForm" method="post" class="form-horizontal" action="target.php">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Pilns vārds</label>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" name="firstName" placeholder="Lietotājvārds" />
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" name="lastName" placeholder="Parole" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Lietotājvārds</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="username" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">E-pasta adrese</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="email" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Parole</label>
+                            <div class="col-lg-5">
+                                <input type="password" class="form-control" name="password" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Paroles apstiprinājums</label>
+                            <div class="col-lg-5">
+                                <input type="password" class="form-control" name="confirmPassword" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Dzimums</label>
+                            <div class="col-lg-5">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender" value="male" /> Vīrietis
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender" value="female" /> Sieviete
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Dzimšanas datums</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="birthday" /> (YYYY/MM/DD)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Valodas</label>
+                            <div class="col-lg-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="english" /> Angļu
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="french" /> Latviešu
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="german" /> Vācu
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="russian" /> Krievu
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="other" /> Cita
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Programmēšanas valodas</label>
+                            <div class="col-lg-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="net" /> .Net
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="java" /> Java
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="c" /> C/C++
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="php" /> PHP
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="perl" /> Perl
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="ruby" /> Ruby
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="python" /> Python
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="javascript" /> Javascript
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label" id="captchaOperation"></label>
+                            <div class="col-lg-2">
+                                <input type="text" class="form-control" name="captcha" />
+                            </div>
+                        </div>
+                    </form>
+      </div>
+      <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Iesniegt</button>
+          <button type="button" class="btn btn-info" id="validateBtn">Pārbaudīt</button>
+         <button type="button" class="btn btn-info" id="resetBtn">Notīrīt</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Aizvert</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- /.container -->
+
+   <!-- <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; neVo.lv 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+</body>
 <script type="text/javascript">
 // Lang
 var name = "Lūdzu ievadiet savu vārdu";
@@ -239,325 +551,4 @@ $(document).ready(function() {
     });
 });
 </script>
-</head>
-
-<body>
-
-    <div class="brand"><img class="img-responsive" style="margin:auto;" src="/style/img/logo2.png" alt=""></div>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html"><img style="max-width:100px" src="/style/img/logo.png" alt=""></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="cv.html">Curriculum Vitae</a>
-                    </li>
-                    <li>
-                        <a href="gallery.html">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="modal" data-target="#myModal">Login</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        <!-- /.container -->
-    </nav>
-
-    <div class="container">
-
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12 text-center">
-                    <div id="carousel-example-generic" class="carousel slide">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators hidden-xs">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        </ol>
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img class="img-responsive img-full" src="/style/img/slide-1.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive img-full" src="/style/img/slide-2.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive img-full" src="/style/img/slide-3.jpg" alt="">
-                            </div>
-                        </div>
-
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                            <span class="icon-prev"></span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                            <span class="icon-next"></span>
-                        </a>
-                    </div>
-                    <div style="font-family:Tahoma !important;" >
-                    <h2 class="brand-before">
-                        <small style="font-family:Tahoma;">Lapini lūgti</small>
-                    </h2>
-                    <h1 class="brand-name" style="font-family:Tahoma;">neVo.lv</h1>
-                    </div>
-                    <hr class="tagline-divider">
-                    <h2>
-                        <small>
-                            <strong>Design Studio</strong>
-                        </small>
-                    </h2>
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Pieslēgšanās</h4>
-      </div>
-      <div class="modal-body">
-          <div id="DIV2" style="display:block;">
-        <div class="input-group">
-  <span class="input-group-addon" aria-hidden="true">User</span>
-  <input type="text" class="form-control" placeholder="Lietotajvards" aria-describedby="sizing-addon2">
-  </div>
-  <br />
-  <div class="input-group">
-    <span class="input-group-addon" aria-hidden="true">Pass</span>
-  <input type="text" class="form-control" placeholder="Parole" aria-describedby="sizing-addon2">
-</div></div>
-<div id="DIV1" style="display:none;">
-    <div class="alert alert-success" role="alert">Jūs esiet veiksmīgi ielogojies!</div>
-</div>
-      </div>
-      <div class="modal-footer">
-          <a href="#" data-toggle="modal" data-target="#myModal2" style="float:left;" data-dismiss="modal">Neesi Reģistrējies?</a>
-         <button type="button" class="btn btn-default btn-lg" onClick="ShowDIV();" id="DIV3">Ieiet</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="ResetDIV();">Aizvert</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- Modal -->
-<div id="myModal2" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Reģistrācija</h4>
-      </div>
-      <div class="modal-body">
-            <section>
-                <div class="col-lg-8 col-lg-offset-2">
-                    <div class="page-header">
-                        <h2>Reģistrācija</h2>
-                    </div>
-
-                    <form id="defaultForm" method="post" class="form-horizontal" action="target.php">
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Pilns vārds</label>
-                            <div class="col-lg-4">
-                                <input type="text" class="form-control" name="firstName" placeholder="Lietotājvārds" />
-                            </div>
-                            <div class="col-lg-4">
-                                <input type="text" class="form-control" name="lastName" placeholder="Parole" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Lietotājvārds</label>
-                            <div class="col-lg-5">
-                                <input type="text" class="form-control" name="username" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">E-pasta adrese</label>
-                            <div class="col-lg-5">
-                                <input type="text" class="form-control" name="email" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Parole</label>
-                            <div class="col-lg-5">
-                                <input type="password" class="form-control" name="password" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Paroles apstiprinājums</label>
-                            <div class="col-lg-5">
-                                <input type="password" class="form-control" name="confirmPassword" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Dzimums</label>
-                            <div class="col-lg-5">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="gender" value="male" /> Vīrietis
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="gender" value="female" /> Sieviete
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Dzimšanas datums</label>
-                            <div class="col-lg-5">
-                                <input type="text" class="form-control" name="birthday" /> (YYYY/MM/DD)
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Valodas</label>
-                            <div class="col-lg-5">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="languages[]" value="english" /> Angļu
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="languages[]" value="french" /> Latviešu
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="languages[]" value="german" /> Vācu
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="languages[]" value="russian" /> Krievu
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="languages[]" value="other" /> Cita
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Programmēšanas valodas</label>
-                            <div class="col-lg-5">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="programs[]" value="net" /> .Net
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="programs[]" value="java" /> Java
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="programs[]" value="c" /> C/C++
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="programs[]" value="php" /> PHP
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="programs[]" value="perl" /> Perl
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="programs[]" value="ruby" /> Ruby
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="programs[]" value="python" /> Python
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="programs[]" value="javascript" /> Javascript
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label" id="captchaOperation"></label>
-                            <div class="col-lg-2">
-                                <input type="text" class="form-control" name="captcha" />
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </section> 
-      </div>
-      <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Iesniegt</button>
-          <button type="button" class="btn btn-info" id="validateBtn">Pārbaudīt</button>
-         <button type="button" class="btn btn-info" id="resetBtn">Notīrīt</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Aizvert</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-    <!-- /.container -->
-
-   <!-- <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; neVo.lv 2015</p>
-                </div>
-            </div>
-        </div>
-    </footer> -->
-</body>
-
 </html>

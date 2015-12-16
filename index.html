@@ -55,6 +55,14 @@
 
 <link rel="stylesheet" href="./fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
 <script type="text/javascript" src="./fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script type="text/javascript"> 
+function ShowDIV(){ 
+if (DIV1.style.display=="none") DIV1.style.display="block"; 
+else DIV1.style.display="none"; 
+if (DIV2.style.display=="block") DIV2.style.display="none"; 
+else DIV2.style.display="none"; 
+} 
+</script> 
 </head>
 
 <body>
@@ -155,6 +163,7 @@
         <h4 class="modal-title">Pieslēgšanās</h4>
       </div>
       <div class="modal-body">
+          <div id="DIV2" style="display:block;">
         <div class="input-group">
   <span class="input-group-addon" aria-hidden="true">User</span>
   <input type="text" class="form-control" placeholder="Lietotajvards" aria-describedby="sizing-addon2">
@@ -163,10 +172,13 @@
   <div class="input-group">
     <span class="input-group-addon" aria-hidden="true">Pass</span>
   <input type="text" class="form-control" placeholder="Parole" aria-describedby="sizing-addon2">
+</div></div>
+<div id="DIV1" style="display:none;">
+    <div class="alert alert-success" role="alert">Jūs esiet veiksmīgi ielogojies!</div>
 </div>
       </div>
       <div class="modal-footer">
-         <button type="button" class="btn btn-default btn-lg">Ieiet</button>
+         <button type="button" class="btn btn-default btn-lg" onClick="ShowDIV();">Ieiet</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Aizvert</button>
       </div>
     </div>

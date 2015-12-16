@@ -8,29 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <link rel='icon' href="/style/img/favicon.ico" />
     <title>neVo - Design Solutions</title>
-<script type="text/javascript"> 
-function ShowDIV(){ 
-if (DIV1.style.display=="none") DIV1.style.display="block"; 
-else DIV1.style.display="none"; 
-if (DIV2.style.display=="block") DIV2.style.display="none"; 
-else DIV2.style.display="none"; 
-DIV3.style.display="none";
-} 
-function ResetDIV(){ 
-DIV2.style.display="block"; 
-DIV1.style.display="none"; 
-DIV3.style.display="inline";
-} 
-</script>
+
         <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+    <script src="js/bootstrap.validator.js"></script
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({
@@ -54,6 +40,10 @@ DIV3.style.display="inline";
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="./fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
 <!-- Add fancyBox -->
 <link rel="stylesheet" href="./fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 <script type="text/javascript" src="./fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
@@ -65,7 +55,194 @@ DIV3.style.display="inline";
 
 <link rel="stylesheet" href="./fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
 <script type="text/javascript" src="./fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-</head>
+<script type="text/javascript"> 
+function ShowDIV(){ 
+if (DIV1.style.display=="none") DIV1.style.display="block"; 
+else DIV1.style.display="none"; 
+if (DIV2.style.display=="block") DIV2.style.display="none"; 
+else DIV2.style.display="none"; 
+DIV3.style.display="none";
+} 
+function ResetDIV(){ 
+DIV2.style.display="block"; 
+DIV1.style.display="none"; 
+DIV3.style.display="inline";
+} 
+</script> 
+<script type="text/javascript">
+  $(document).ready(ajustamodal);
+  $(window).resize(ajustamodal);
+  function ajustamodal() {
+    var altura = $(window).height() - 155; //value corresponding to the modal heading + footer
+    $(".ativa-scroll").css({"height":altura,"overflow-y":"auto"});
+  }
+</script>
+<script type="text/javascript">
+// Lang
+var name = "Lūdzu ievadiet savu vārdu";
+var valid = "Ievadītā informācija ir nederīga";
+var surname = "Lūdzu ievadiet savu uzvārdu";
+var usern = "Ievadītais lietotājvārds nav derīgs";
+var usern1 = "Lūdzu ievadiet savu lietotājvārdu";
+var userchar = "Lietotājvārdam jāsastāv no 6-30 simboliem";
+var useralph = "Lietotājvārds var sastāvēt tikai no alfabēta burtiem, cipariem, '.' un '_'";
+var inuse = "Lietotājvārds jau ir aizņemts";
+var passuse = "Lietotājvārds nedrīkst sakrist ar paroli";
+var email = "Ievadītā adrese nav derīga";
+var passinneed = "Lūdzu ievadiet paroli";
+var passnotmatch = "Paroles nesakrīt";
+var gender = "Norādiet dzimumu";
+var birth = "Ievadītais datums nav derīgs";
+var choice = "Lūdzu izvēlieties 2-4 programmēšanas valodas, kas jums padodas";
+var choice2 = "Izvēlieties vismaz vienu valodu";
+var wrong = "Apstiprinājums ir nepareizs";
+$(document).ready(function() {
+    // Generate a simple captcha
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    $('#captchaOperation').html([randomNumber(1, 40), '+', randomNumber(1, 80), '='].join(' '));
+    $('#defaultForm').bootstrapValidator({
+//        live: 'disabled',
+        message: valid,
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            firstName: {
+                group: '.col-lg-4',
+                validators: {
+                    notEmpty: {
+                        message: name
+                    }
+                }
+            },
+            lastName: {
+                group: '.col-lg-4',
+                validators: {
+                    notEmpty: {
+                        message: surname
+                    }
+                }
+            },
+            username: {
+                message: usern,
+                validators: {
+                    notEmpty: {
+                        message: usern1
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: userchar
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_\.]+$/,
+                        message: useralph
+                    },
+                    remote: {
+                        type: 'POST',
+                        url: 'remote.php',
+                        message: inuse
+                    },
+                    different: {
+                        field: 'password,confirmPassword',
+                        message: passuse
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    emailAddress: {
+                        message: email
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: passinneed
+                    },
+                    identical: {
+                        field: 'confirmPassword',
+                        message: passnotmatch
+                    },
+                    different: {
+                        field: 'username',
+                        message: passuse
+                    }
+                }
+            },
+            confirmPassword: {
+                validators: {
+                    notEmpty: {
+                        message: passinneed
+                    },
+                    identical: {
+                        field: 'password',
+                        message: passnotmatch
+                    },
+                    different: {
+                        field: 'username',
+                        message: passuse
+                    }
+                }
+            },
+            birthday: {
+                validators: {
+                    date: {
+                        format: 'YYYY/MM/DD',
+                        message: birth
+                    }
+                }
+            },
+            gender: {
+                validators: {
+                    notEmpty: {
+                        message: gender
+                    }
+                }
+            },
+            'languages[]': {
+                validators: {
+                    notEmpty: {
+                        message: choice2
+                    }
+                }
+            },
+            'programs[]': {
+                validators: {
+                    choice: {
+                        min: 2,
+                        max: 4,
+                        message: choice
+                    }
+                }
+            },
+            captcha: {
+                validators: {
+                    callback: {
+                        message: wrong,
+                        callback: function(value, validator) {
+                            var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
+                            return value == sum;
+                        }
+                    }
+                }
+            }
+        }
+    });
+    // Validate the form manually
+    $('#validateBtn').click(function() {
+        $('#defaultForm').bootstrapValidator('validate');
+    });
+    $('#resetBtn').click(function() {
+        $('#defaultForm').data('bootstrapValidator').resetForm(true);
+    });
+});
+</script>
 </head>
 
 <body>
@@ -265,7 +442,7 @@ DIV3.style.display="inline";
 
 <!-- Modal -->
 <div id="myModal2" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog " >
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -273,10 +450,158 @@ DIV3.style.display="inline";
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Reģistrācija</h4>
       </div>
-      <div class="modal-body">
-          
+      <div class="modal-body ativa-scroll"> 
+      <form id="defaultForm" method="post" class="form-horizontal" action="target.php">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Pilns vārds</label>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" name="firstName" placeholder="Lietotājvārds" />
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" name="lastName" placeholder="Parole" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Lietotājvārds</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="username" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">E-pasta adrese</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="email" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Parole</label>
+                            <div class="col-lg-5">
+                                <input type="password" class="form-control" name="password" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Paroles apstiprinājums</label>
+                            <div class="col-lg-5">
+                                <input type="password" class="form-control" name="confirmPassword" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Dzimums</label>
+                            <div class="col-lg-5">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender" value="male" /> Vīrietis
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender" value="female" /> Sieviete
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Dzimšanas datums</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="birthday" /> (YYYY/MM/DD)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Valodas</label>
+                            <div class="col-lg-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="english" /> Angļu
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="french" /> Latviešu
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="german" /> Vācu
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="russian" /> Krievu
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="other" /> Cita
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Programmēšanas valodas</label>
+                            <div class="col-lg-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="net" /> .Net
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="java" /> Java
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="c" /> C/C++
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="php" /> PHP
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="perl" /> Perl
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="ruby" /> Ruby
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="python" /> Python
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="javascript" /> Javascript
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label" id="captchaOperation"></label>
+                            <div class="col-lg-2">
+                                <input type="text" class="form-control" name="captcha" />
+                            </div>
+                        </div>
+                        </form>
       </div>
       <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Iesniegt</button>
+          <button type="button" class="btn btn-info" id="validateBtn">Pārbaudīt</button>
+         <button type="button" class="btn btn-info" id="resetBtn">Notīrīt</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Aizvert</button>
       </div>
     </div>

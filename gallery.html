@@ -10,7 +10,20 @@
     <meta name="author" content="">
     <link rel='icon' href="/style/img/favicon.ico" />
     <title>neVo - Design Solutions</title>
-
+<script type="text/javascript"> 
+function ShowDIV(){ 
+if (DIV1.style.display=="none") DIV1.style.display="block"; 
+else DIV1.style.display="none"; 
+if (DIV2.style.display=="block") DIV2.style.display="none"; 
+else DIV2.style.display="none"; 
+DIV3.style.display="none";
+} 
+function ResetDIV(){ 
+DIV2.style.display="block"; 
+DIV1.style.display="none"; 
+DIV3.style.display="inline";
+} 
+</script>
         <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -272,25 +285,6 @@
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-            <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Login</h4>
-      </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-        </div>
         <!-- /.container -->
     </nav>
 
@@ -332,7 +326,61 @@
 
     </div>
     <!-- /.container -->
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Pieslēgšanās</h4>
+      </div>
+      <div class="modal-body">
+          <div id="DIV2" style="display:block;">
+        <div class="input-group">
+  <span class="input-group-addon" aria-hidden="true">User</span>
+  <input type="text" class="form-control" placeholder="Lietotajvards" aria-describedby="sizing-addon2">
+  </div>
+  <br />
+  <div class="input-group">
+    <span class="input-group-addon" aria-hidden="true">Pass</span>
+  <input type="text" class="form-control" placeholder="Parole" aria-describedby="sizing-addon2">
+</div></div>
+<div id="DIV1" style="display:none;">
+    <div class="alert alert-success" role="alert">Jūs esiet veiksmīgi ielogojies!</div>
+</div>
+      </div>
+      <div class="modal-footer">
+          <a href="#" data-toggle="modal" data-target="#myModal2" style="float:left;" data-dismiss="modal">Neesi Reģistrējies?</a>
+         <button type="button" class="btn btn-default btn-lg" onClick="ShowDIV();" id="DIV3">Ieiet</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="ResetDIV();">Aizvert</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Reģistrācija</h4>
+      </div>
+      <div class="modal-body">
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Aizvert</button>
+      </div>
+    </div>
+
+  </div>
+</div>
    <!-- <footer>
         <div class="container">
             <div class="row">

@@ -61,10 +61,12 @@ if (DIV1.style.display=="none") DIV1.style.display="block";
 else DIV1.style.display="none"; 
 if (DIV2.style.display=="block") DIV2.style.display="none"; 
 else DIV2.style.display="none"; 
+DIV3.style.display="none";
 } 
 function ResetDIV(){ 
 DIV2.style.display="block"; 
 DIV1.style.display="none"; 
+DIV3.style.display="inline";
 } 
 </script> 
 </head>
@@ -182,7 +184,7 @@ DIV1.style.display="none";
 </div>
       </div>
       <div class="modal-footer">
-         <button type="button" class="btn btn-default btn-lg" onClick="ShowDIV();">Ieiet</button>
+         <button type="button" class="btn btn-default btn-lg" onClick="ShowDIV();" id="DIV3">Ieiet</button>
         <button type="button" class="btn btn-default" data-dismiss="modal" onClick="ResetDIV();">Aizvert</button>
       </div>
     </div>

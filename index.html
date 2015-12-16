@@ -70,6 +70,14 @@ DIV1.style.display="none";
 DIV3.style.display="inline";
 } 
 </script> 
+<script type="text/javascript">
+  $(document).ready(ajustamodal);
+  $(window).resize(ajustamodal);
+  function ajustamodal() {
+    var altura = $(window).height() - 155; //value corresponding to the modal heading + footer
+    $(".ativa-scroll").css({"height":altura,"overflow-y":"auto"});
+  }
+</script>
 </head>
 
 <body>
@@ -197,7 +205,7 @@ DIV3.style.display="inline";
 
 <!-- Modal -->
 <div id="myModal2" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog " >
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -205,7 +213,7 @@ DIV3.style.display="inline";
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Reģistrācija</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body ativa-scroll">
                         <div class="form-group">
                             <label class="col-lg-3 control-label">Pilns vārds</label>
                             <div class="col-lg-4">
